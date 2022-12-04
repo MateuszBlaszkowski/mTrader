@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1122.5197"
+   height="793.70081"
+   viewBox="0 0 296.99999 210"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="projektInterfejsuMain.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.0899939"
+     inkscape:cx="489.23588"
+     inkscape:cy="175.5986"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="416.1454"
+       y="295.80474"
+       width="49.73445"
+       height="23.002778"
+       id="rect12652" />
+    <rect
+       x="406.88249"
+       y="249.96324"
+       width="58.659031"
+       height="36.079823"
+       id="rect11353" />
+    <rect
+       x="394.25952"
+       y="239.71717"
+       width="95.041935"
+       height="45.676468"
+       id="rect7567" />
+    <rect
+       x="416.32201"
+       y="247.76403"
+       width="151.05669"
+       height="27.111048"
+       id="rect5973" />
+    <rect
+       x="817.22727"
+       y="67.942776"
+       width="152.15349"
+       height="48.306935"
+       id="rect5256" />
+    <rect
+       x="233.44742"
+       y="117.7387"
+       width="103.22864"
+       height="49.242509"
+       id="rect4258" />
+    <rect
+       x="272.84405"
+       y="173.32029"
+       width="45.272263"
+       height="26.404263"
+       id="rect3912" />
+    <rect
+       x="277.58328"
+       y="364.92045"
+       width="119.83473"
+       height="42.65304"
+       id="rect2551" />
+    <rect
+       x="225.45178"
+       y="331.06883"
+       width="29.112392"
+       height="91.399371"
+       id="rect599" />
+    <rect
+       x="224.0476"
+       y="75.640001"
+       width="270.00608"
+       height="160.85469"
+       id="rect275" />
+    <rect
+       x="277.58328"
+       y="364.92044"
+       width="119.83473"
+       height="42.653042"
+       id="rect2551-5" />
+    <rect
+       x="277.58328"
+       y="364.92044"
+       width="119.83473"
+       height="42.653042"
+       id="rect2551-5-5" />
+    <rect
+       x="277.58328"
+       y="364.92044"
+       width="142.85383"
+       height="54.839625"
+       id="rect2551-5-5-2" />
+    <rect
+       x="817.22729"
+       y="67.94278"
+       width="152.15349"
+       height="48.306934"
+       id="rect5256-7" />
+    <rect
+       x="817.22729"
+       y="67.94278"
+       width="178.17699"
+       height="49.442408"
+       id="rect5256-2" />
+    <rect
+       x="416.32202"
+       y="247.76402"
+       width="151.05669"
+       height="27.111048"
+       id="rect5973-1" />
+    <rect
+       x="394.25952"
+       y="239.71716"
+       width="129.73729"
+       height="16.093725"
+       id="rect7567-8" />
+    <rect
+       x="394.25952"
+       y="239.71716"
+       width="129.73729"
+       height="16.093725"
+       id="rect7567-8-4" />
+    <rect
+       x="394.25952"
+       y="239.71716"
+       width="129.73729"
+       height="16.093725"
+       id="rect7567-8-4-7" />
+    <rect
+       x="394.25952"
+       y="239.71716"
+       width="92.452615"
+       height="57.20697"
+       id="rect7567-8-9" />
+    <rect
+       x="416.14539"
+       y="295.80475"
+       width="49.734451"
+       height="23.002777"
+       id="rect12652-3" />
+    <rect
+       x="416.14539"
+       y="295.80475"
+       width="61.581172"
+       height="27.28956"
+       id="rect12652-0" />
+    <rect
+       x="416.14539"
+       y="295.80475"
+       width="61.581173"
+       height="27.28956"
+       id="rect12652-0-1" />
+  </defs>
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ffffff;stroke-width:0.225697"
+       id="rect111"
+       width="218.04556"
+       height="129.7892"
+       x="49.082024"
+       y="9.3148375"
+       inkscape:export-filename="interfejs.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#b4b4b4;stroke-width:0.258755;stroke-opacity:1"
+       id="rect4148"
+       width="208.67177"
+       height="92.744476"
+       x="53.768921"
+       y="37.019135" />
+    <path
+       sodipodi:type="star"
+       style="fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       id="path10187-4"
+       inkscape:flatsided="false"
+       sodipodi:sides="3"
+       sodipodi:cx="88.621208"
+       sodipodi:cy="63.425163"
+       sodipodi:r1="5.2327948"
+       sodipodi:r2="2.6163974"
+       sodipodi:arg1="0.54458961"
+       sodipodi:arg2="1.5917872"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 93.097027,66.136102 -4.530735,-0.09512 -4.530735,-0.09512 2.347742,-3.876172 2.347742,-3.876173 2.182993,3.971291 z"
+       inkscape:transform-center-x="0.014435266"
+       inkscape:transform-center-y="-0.33120742"
+       transform="matrix(0.2627885,0,0,0.2627885,64.272808,65.839831)" />
+    <path
+       sodipodi:type="star"
+       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       id="path10187-4-0"
+       inkscape:flatsided="false"
+       sodipodi:sides="3"
+       sodipodi:cx="88.621208"
+       sodipodi:cy="63.425163"
+       sodipodi:r1="5.2327948"
+       sodipodi:r2="2.6163974"
+       sodipodi:arg1="0.54458961"
+       sodipodi:arg2="1.5917872"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 93.097027,66.136102 -4.530735,-0.09512 -4.530735,-0.09512 2.347742,-3.876172 2.347742,-3.876173 2.182993,3.971291 z"
+       inkscape:transform-center-x="-0.014645953"
+       inkscape:transform-center-y="0.33601513"
+       transform="matrix(-0.26660005,0,0,-0.26660005,109.96816,120.00803)" />
+    <path
+       sodipodi:type="star"
+       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       id="path10187-4-0-7"
+       inkscape:flatsided="false"
+       sodipodi:sides="3"
+       sodipodi:cx="88.621208"
+       sodipodi:cy="63.425163"
+       sodipodi:r1="5.2327948"
+       sodipodi:r2="2.6163974"
+       sodipodi:arg1="0.54458961"
+       sodipodi:arg2="1.5917872"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 93.097027,66.136102 -4.530735,-0.09512 -4.530735,-0.09512 2.347742,-3.876172 2.347742,-3.876173 2.182993,3.971291 z"
+       inkscape:transform-center-x="-0.014645953"
+       inkscape:transform-center-y="0.33601513"
+       transform="matrix(-0.26660005,0,0,-0.26660005,110.38914,66.422729)" />
+    <g
+       id="g5380-6"
+       transform="matrix(0.81796289,0,0,0.81796289,49.436778,26.209801)">
+      <rect
+         style="fill:#f1f1f1;fill-opacity:1;stroke:none;stroke-width:0.29414;stroke-opacity:1"
+         id="rect4368-1"
+         width="44.754551"
+         height="14.209036"
+         x="211.72746"
+         y="17.976526" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-2.6699897,3.958886)"
+         id="text5254-5"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect5256-2);display:inline;fill:#f1f1f1;fill-opacity:1;stroke:none;stroke-opacity:1"><tspan
+           x="817.22656"
+           y="84.890383"
+           id="tspan14514"><tspan
+             style="fill:#000000"
+             id="tspan14512">Nowa Transakcja</tspan></tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-5.5697062,-4.0523676)"
+       id="text273"
+       style="font-size:29.3333px;white-space:pre;shape-inside:url(#rect275);display:inline;fill:#ffffff"><tspan
+         x="224.04688"
+         y="102.40228"
+         id="tspan14518"><tspan
+           style="font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';fill:#000000"
+           id="tspan14516">Witaj, Mateusz </tspan></tspan></text>
+    <rect
+       style="fill:#f2f2f2;stroke-width:0.264583"
+       id="rect431"
+       width="8.2400484"
+       height="72.189987"
+       x="59.471653"
+       y="42.991554" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text597"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect599);display:inline;fill:#f2f2f2" />
+    <rect
+       style="fill:#9edc13;stroke-width:0.266049;fill-opacity:1"
+       id="rect655"
+       width="8.1504831"
+       height="25.436668"
+       x="59.561218"
+       y="89.744873" />
+    <rect
+       style="fill:#2ab7ed;fill-opacity:1;stroke-width:0.221275"
+       id="rect655-6"
+       width="8.1504831"
+       height="17.595442"
+       x="59.516434"
+       y="72.4384" />
+    <rect
+       style="fill:#ed8f2a;fill-opacity:1;stroke-width:0.199976"
+       id="rect655-6-8"
+       width="8.1504831"
+       height="14.371075"
+       x="59.516438"
+       y="58.356293" />
+    <rect
+       style="fill:#fff035;fill-opacity:1;stroke-width:0.206774"
+       id="rect655-6-8-7"
+       width="8.1504831"
+       height="15.364738"
+       x="59.516434"
+       y="42.991554" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-4.1200241,0.94344982)"
+       id="text2549"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect2551);display:inline;fill:#9edc13;fill-opacity:1"><tspan
+         x="277.58398"
+         y="391.55088"
+         id="tspan14522"><tspan
+   style="font-size:21.3333px"
+   id="tspan14520">Alior</tspan> </tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-4.1200241,-20.283636)"
+       id="text2549-5"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect2551-5);display:inline;fill:#2ab7ed;fill-opacity:1"><tspan
+         x="277.58398"
+         y="391.55088"
+         id="tspan14526"><tspan
+   style="font-size:21.3333px"
+   id="tspan14524">Kruk</tspan> </tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-4.1200241,-36.016512)"
+       id="text2549-5-3"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.3333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect2551-5-5);display:inline;fill:#ed8f2a;fill-opacity:1"><tspan
+         x="277.58398"
+         y="391.55088"
+         id="tspan14530"><tspan
+   style="font-size:21.3333px"
+   id="tspan14528">Orlen</tspan> </tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-4.1200241,-50.896821)"
+       id="text2549-5-3-5"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.3333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect2551-5-5-2);display:inline;fill:#fff035;fill-opacity:1"><tspan
+         x="277.58398"
+         y="384.28788"
+         id="tspan14532">Inne</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text3910"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.3333px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect3912);display:inline;fill:#ed8f2a;fill-opacity:1" />
+    <g
+       id="g4366"
+       transform="translate(-8.0839779,0.77125383)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#b4b4b4;stroke-width:0.264583;stroke-opacity:1"
+         id="rect4254"
+         width="26.059349"
+         height="5.8674374"
+         x="61.766296"
+         y="31.151697" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,1.7903274,0.26825408)"
+         id="text4256"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect4258);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"><tspan
+           x="233.44727"
+           y="134.6853"
+           id="tspan14534">Portfel 1</tspan></text>
+    </g>
+    <g
+       id="g5380"
+       transform="translate(-13.165908,0.62357807)">
+      <rect
+         style="fill:#f1f1f1;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+         id="rect4368"
+         width="40.257294"
+         height="12.781209"
+         x="216.22472"
+         y="17.976526" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,1.9588556,3.2449726)"
+         id="text5254"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect5256);display:inline;fill:#f1f1f1;fill-opacity:1;stroke:none;stroke-opacity:1"><tspan
+           x="817.22656"
+           y="84.890383"
+           id="tspan14538"><tspan
+             style="fill:#000000"
+             id="tspan14536">Dodaj portfel + </tspan></tspan></text>
+    </g>
+    <g
+       id="g5380-0"
+       transform="translate(7.257894,2.9893293)">
+      <rect
+         style="fill:#f1f1f1;fill-opacity:1;stroke:none;stroke-width:0.153167;stroke-opacity:1"
+         id="rect4368-4"
+         width="13.491304"
+         height="12.781209"
+         x="241.61928"
+         y="15.610775" />
+    </g>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,68.75508,7.9869641)"
+       id="text5971"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect5973);display:inline;fill:#ffffff;fill-opacity:1;stroke:#b4b4b4;stroke-opacity:1"><tspan
+         x="416.32227"
+         y="262.28967"
+         id="tspan14542"><tspan
+           style="fill:#000000;stroke:none"
+           id="tspan14540">Historia transakcji</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-10.893018,-15.71386)"
+       id="text5971-0"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect5973-1);display:inline;fill:#ffffff;fill-opacity:1;stroke:#b4b4b4;stroke-opacity:1"><tspan
+         x="416.32227"
+         y="262.28967"
+         id="tspan14546"><tspan
+           style="fill:#000000;stroke:none"
+           id="tspan14544">Dane o portfelu</tspan></tspan></text>
+    <g
+       id="g6552"
+       transform="translate(69.143528,6.8361444)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#b4b4b4;stroke-width:0.264583;stroke-opacity:1"
+         id="rect5501"
+         width="79.669571"
+         height="42.454174"
+         x="110.28416"
+         y="72.727364" />
+      <rect
+         style="fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:0.231668;stroke-opacity:1"
+         id="rect5977"
+         width="4.1177492"
+         height="42.45417"
+         x="185.83598"
+         y="72.727356" />
+      <rect
+         style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:0.198019;stroke-opacity:1"
+         id="rect6031"
+         width="75.551826"
+         height="4.7876549"
+         x="110.28416"
+         y="72.727356" />
+      <rect
+         style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:0.198019;stroke-opacity:1"
+         id="rect6031-2"
+         width="75.551826"
+         height="4.7876549"
+         x="110.28416"
+         y="81.547058" />
+      <rect
+         style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:0.198019;stroke-opacity:1"
+         id="rect6031-2-5"
+         width="75.551826"
+         height="4.7876549"
+         x="110.28416"
+         y="90.36676" />
+    </g>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#cccccc;stroke-width:0.264583;stroke-opacity:1"
+       id="rect6647"
+       width="68.361443"
+       height="65.435295"
+       x="99.503883"
+       y="56.71468" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-0.44194532,2.1308988)"
+       id="text7565-9"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect7567-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"><tspan
+         x="394.25977"
+         y="250.61129"
+         id="tspan14548">Wartość obecna</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,31.955426,-0.14028038)"
+       id="text7565-9-2"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';text-align:center;white-space:pre;shape-inside:url(#rect7567-8-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"
+       x="35.862305"
+       y="0"><tspan
+         x="416.65039"
+         y="250.61129"
+         id="tspan14550">Wartość </tspan><tspan
+         x="403.87695"
+         y="265.61129"
+         id="tspan14552">początkowa</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,2.5997295,31.755747)"
+       id="text7565-9-9"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect7567-8-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"><tspan
+         x="394.25977"
+         y="250.61129"
+         id="tspan14554">Stopa zwrotu</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,36.206851,31.755747)"
+       id="text7565-9-9-3"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect7567-8-4-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"><tspan
+         x="394.25977"
+         y="250.61129"
+         id="tspan14556">Zysk/strata</tspan></text>
+    <path
+       sodipodi:type="star"
+       style="fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       id="path10187"
+       inkscape:flatsided="false"
+       sodipodi:sides="3"
+       sodipodi:cx="88.621208"
+       sodipodi:cy="63.425163"
+       sodipodi:r1="5.2327948"
+       sodipodi:r2="2.6163974"
+       sodipodi:arg1="0.54458961"
+       sodipodi:arg2="1.5917872"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 93.097027,66.136102 -4.530735,-0.09512 -4.530735,-0.09512 2.347742,-3.876172 2.347742,-3.876173 2.182993,3.971291 z"
+       inkscape:transform-center-x="0.014435266"
+       inkscape:transform-center-y="-0.33120742"
+       transform="matrix(0.2627885,0,0,0.2627885,64.372062,49.841682)" />
+    <rect
+       style="fill:#f2f2f2;fill-opacity:1;stroke:none;stroke-width:0.236322;stroke-opacity:1"
+       id="rect12480"
+       width="16.155712"
+       height="16.155712"
+       x="108.72575"
+       y="72.61422" />
+    <rect
+       style="fill:#f2f2f2;fill-opacity:1;stroke:none;stroke-width:0.236322;stroke-opacity:1"
+       id="rect12480-2"
+       width="16.155712"
+       height="16.155712"
+       x="140.42213"
+       y="72.61422" />
+    <rect
+       style="fill:#f2f2f2;fill-opacity:1;stroke:none;stroke-width:0.236322;stroke-opacity:1"
+       id="rect12480-2-1"
+       width="16.155712"
+       height="16.155712"
+       x="108.72575"
+       y="102.20632" />
+    <rect
+       style="fill:#f2f2f2;fill-opacity:1;stroke:none;stroke-width:0.236322;stroke-opacity:1"
+       id="rect12480-2-1-0"
+       width="16.155712"
+       height="16.155712"
+       x="140.42213"
+       y="102.20632" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,0.25258593,0.10407127)"
+       id="text12650"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect12652);display:inline;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-opacity:1"><tspan
+         x="416.14453"
+         y="310.33068"
+         id="tspan14560"><tspan
+           style="fill:#0fdf00"
+           id="tspan14558">20 500</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-0.9866149,29.585586)"
+       id="text12650-1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect12652-0);display:inline;fill:#0fdf00;fill-opacity:1;stroke:none;stroke-opacity:1"><tspan
+         x="416.14453"
+         y="310.33068"
+         id="tspan14562">+ 1,58%</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,32.70861,29.696173)"
+       id="text12650-1-8"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect12652-0-1);display:inline;fill:#0fdf00;fill-opacity:1;stroke:none;stroke-opacity:1"><tspan
+         x="416.14453"
+         y="310.33068"
+         id="tspan14564">500 zł</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,31.948967,0.10407127)"
+       id="text12650-9"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic';white-space:pre;shape-inside:url(#rect12652-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"><tspan
+         x="416.14453"
+         y="310.33068"
+         id="tspan14566">20 000</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#ff1616;stroke-width:0.269542;stroke-opacity:1"
+       id="rect14079"
+       width="48.853699"
+       height="129.52618"
+       x="49.08913"
+       y="9.4430799" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#ff1616;stroke-width:0.264583;stroke-opacity:1"
+       id="rect14237"
+       width="71.780212"
+       height="129.66095"
+       x="97.942825"
+       y="9.4430799" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#ff1616;stroke-width:0.264583;stroke-opacity:1"
+       id="rect14239"
+       width="97.404556"
+       height="129.66095"
+       x="169.72304"
+       y="9.4430799" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#ff1616;stroke-width:0.39913;stroke-opacity:1"
+       id="rect14387"
+       width="120.63392"
+       height="18.562706"
+       x="49.08913"
+       y="9.4430799" />
+  </g>
+</svg>

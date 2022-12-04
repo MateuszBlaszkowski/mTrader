@@ -1,0 +1,4 @@
+Database:	srv50655_mTrader
+Host:	h26.seohost.pl
+Username:	srv50655_mTrader
+Hasło:	H1gHPsjdi0
