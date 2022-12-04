@@ -127,3 +127,4 @@ canvas.create_rectangle((0, 200),(21,170),fill='blue', outline='white')
 canvas.create_rectangle((0, 170),(21,150),fill='red', outline='white')
 canvas.create_rectangle((0, 150),(21,120),fill='green', outline='white')
 """
+#TEST
