@@ -103,7 +103,6 @@ root.columnconfigure(0, weight=1)
 root.columnconfigure(1, weight=1)
 root.resizable(0,0)
 
-
 loginLabel = Label(root, text="Login:")
 loginBox = Entry(root, width=25)
 passLabel = Label(root, text="Hasło:")
@@ -127,4 +126,3 @@ canvas.create_rectangle((0, 200),(21,170),fill='blue', outline='white')
 canvas.create_rectangle((0, 170),(21,150),fill='red', outline='white')
 canvas.create_rectangle((0, 150),(21,120),fill='green', outline='white')
 """
-#TEST

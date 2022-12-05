@@ -38,39 +38,55 @@ def f1(login):
     
     #wallet()         
     def wallet():
-        lf = tk.LabelFrame(mainWin, text="Dane o portfelu", width=300, height=300, background='white', font=("Century Gothic", 12))
-        canvas = tk.Canvas(mainWin, width=40, height=300, bg='white', highlightbackground='white')
-        canvas.create_rectangle((0,300),(40,150), fill='#9edc13', outline='#9edc13')
-        label1 = Label(mainWin, text="Alior", font=("Century Gothic", 16), background="white")
-        label2 = Label(mainWin, text="Kruk", font=("Century Gothic", 16), background="white")
-        label3 = Label(mainWin, text="Orlen", font=("Century Gothic", 16), background="white")
-        label4 = Label(mainWin, text="Inne", font=("Century Gothic", 16), background="white")
+        global mainLf
+        mainLf = tk.LabelFrame(mainWin, text="Portfel 1", width=850, height=400, background='white', font=("Century Gothic", 12))
+        mainLf.grid(columnspan=3, row=1)
+        mainLf.columnconfigure(0, weight=1)
+        mainLf.columnconfigure(1, weight=2)
+        mainLf.columnconfigure(2, weight=3)
+        
+        lf = tk.LabelFrame(mainLf, text="Dane o portfelu", width=300, height=300, background='white', font=("Century Gothic", 12))
+        
+        canvas = tk.Canvas(mainLf, width=40, height=300, bg='white', highlightbackground='white')
+        
+        
+        label1 = Label(mainLf, text="Alior", font=("Century Gothic", 16), background="white")
+    
+        label2 = Label(mainLf, text="Kruk", font=("Century Gothic", 16), background="white")
+        label3 = Label(mainLf, text="Orlen", font=("Century Gothic", 16), background="white")
+        label4 = Label(mainLf, text="Inne", font=("Century Gothic", 16), background="white")
+        
+        canvas.create_rectangle((0,300),(40,150), fill='#9edc13', outline='#9edc13')# 150 + (300-150)/2 + 5 = 150 + 75 + 5 = 230
         canvas.create_rectangle((0,150),(40,100), fill='#2ab7ed', outline='#2ab7ed')
         canvas.create_rectangle((0,100),(40,50), fill='#ed8f2a', outline='#ed8f2a')
         canvas.create_rectangle((0,50),(40,0), fill='#fff035', outline='#fff035')
-        lf.grid(column=1, row=1, sticky=tk.E)
-        label1.place(x=80, y=300)
-        label2.place(x=80, y=210)
-        label3.place(x=80, y=160)
-        label4.place(x=80, y=110)
-        canvas.grid(column=0, row=1, sticky=tk.W, padx=25, pady=15)
+        
+        lf.place(x=200, y=50)
+        
+        label1.place(x=70, y=230)
+        label2.place(x=70, y=130)
+        label3.place(x=70, y=80)
+        label4.place(x=70, y=30)
+        
+        
+        canvas.place(x=20, y=20)
     global showWallets
     def showWallets():
         db.cursor.execute(f"SELECT * FROM `wallets` INNER Join users ON users.user_id = wallets.user_id WHERE login = '{login}';")
         result = db.cursor.fetchall()
         if len(result)>0:
-            global lf
-            lf = tk.LabelFrame(mainWin, text="Portfele", width=870, height=400, font=("Century Gothic", 12), background='white')
-            lf.columnconfigure(0, weight=1)
-            lf.columnconfigure(1, weight=1)
-            lf.columnconfigure(2, weight=1)
-            lf.grid(columnspan=3, row=1, sticky=tk.N)
+            global walletsLf
+            walletsLf = tk.LabelFrame(mainWin, text="Portfele", width=870, height=400, font=("Century Gothic", 12), background='white')
+            walletsLf.columnconfigure(0, weight=1)
+            walletsLf.columnconfigure(1, weight=1)
+            walletsLf.columnconfigure(2, weight=1)
+            walletsLf.grid(columnspan=3, row=1, sticky=tk.N)
             buttons = []
             a=0
             db.cursor.execute(f"SELECT wallet_name FROM `wallets` INNER Join users ON users.user_id = wallets.user_id WHERE login = '{login}';")
             walletsNames = db.cursor.fetchall()
             for i in range(len(result)):    
-                buttons.append(tk.Button(lf, width=11, height=5,  wraplength=100,text=walletsNames[i],border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=ok))
+                buttons.append(tk.Button(walletsLf, width=11, height=5,  wraplength=100,text=walletsNames[i],border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=ok))
                 if i<6:
                     buttons[i].grid(column=0+i, row=0, sticky=tk.W, padx=15, pady=15)
                 elif i<12:
@@ -80,7 +96,7 @@ def f1(login):
            if messagebox.askyesno("brak portfela", "Nie masz jeszcze żadnego portfela.\n\n Chcesz utworzyć nowy portfel?", parent=mainWin):
             createWalletF()
     def ok():
-        lf.destroy()
+        walletsLf.destroy()
         wallet()
 
     

@@ -17,9 +17,13 @@ def mainFunction(id):
                 db.cursor.execute(f"INSERT INTO `wallets`(`wallet_id`, `user_id`, `wallet_name`, `wallet_size`) VALUES (NULL,'{id}','{name}','{size}')")
                 db.mTrader_db.commit()
                 try:
-                    main.lf.destroy()
+                    main.walletsLf.destroy()
                 except:
-                    pass    
+                    pass
+                try:
+                    main.mainLf.destroy() 
+                except:
+                    pass
                 main.showWallets()
                 createWin.destroy()
             else:
