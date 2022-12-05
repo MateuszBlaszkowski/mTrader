@@ -19,17 +19,18 @@ def f1(login):
     mainWin.geometry("900x500")
     mainWin.resizable(800, 500)
     mainWin.columnconfigure(0,weight=1)
-    mainWin.columnconfigure(1,weight=2)
-    mainWin.columnconfigure(2,weight=3)
+    mainWin.columnconfigure(1,weight=5)
+    mainWin.columnconfigure(2,weight=1)
     headerText = "Witaj, "+imie[0]
     header = Label(mainWin, text=headerText, font=("Century Gothic", 22), background='white')
     addWallet = tk.Button(mainWin, text="Dodaj portfel", width=20, height=2, border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=createWalletF)
+    changeWallet = tk.Button(mainWin, text="Zmień portfel", width=15, height=2, border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=createWalletF)
     
 
 
     
-    header.grid(columnspan=2, row=0, sticky=tk.W, padx=15, pady=15)
-    addWallet.grid(column=2, row=0, sticky=tk.E, pady=15, padx=15)
+    header.grid(column=0, row=0, sticky=tk.W, padx=15, pady=15)
+    addWallet.grid(column=2, row=0, sticky=tk.N, pady=15)
 
     def closing():
         if messagebox.askokcancel("Wyjście", "Zamknąć program?"):
@@ -67,6 +68,8 @@ def f1(login):
         label2.place(x=70, y=130)
         label3.place(x=70, y=80)
         label4.place(x=70, y=30)
+        changeWallet.grid(column=1, row=0, sticky=tk.E, pady=15)
+
         
         
         canvas.place(x=20, y=20)
