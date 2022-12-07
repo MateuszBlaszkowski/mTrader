@@ -14,18 +14,30 @@ def mainFunction(id):
             if len(str(entryName.get()))<22:
                 size = entryValue.get().replace("'","")
                 name = entryName.get().replace("'", "")
-                db.cursor.execute(f"INSERT INTO `wallets`(`wallet_id`, `user_id`, `wallet_name`, `wallet_size`) VALUES (NULL,'{id}','{name}','{size}')")
-                db.mTrader_db.commit()
-                try:
-                    main.walletsLf.destroy()
-                except:
-                    pass
-                try:
-                    main.mainLf.destroy() 
-                except:
-                    pass
-                main.showWallets()
-                createWin.destroy()
+                db.cursor.execute(f"SELECT * FROM `wallets` WHERE user_id = {id}")
+                result = db.cursor.fetchall()
+                if(len(result)<12):
+                    db.cursor.execute(f"SELECT * FROM `wallets` WHERE user_id = {id} AND wallet_name = '{name}'")
+                    result = db.cursor.fetchall()
+
+                    if(len(result)==0):
+                        db.cursor.execute(f"INSERT INTO `wallets`(`wallet_id`, `user_id`, `wallet_name`, `wallet_size`) VALUES (NULL,'{id}','{name}','{size}')")
+                        db.mTrader_db.commit()
+                        try:
+                            main.walletsLf.destroy()
+                        except:
+                            pass
+                        try:
+                            main.mainLf.destroy() 
+                        except:
+                            pass
+                        main.showWallets()
+                        createWin.destroy()
+                    else:
+                        messagebox.showwarning("Portfel o takiej nazwie już istnieje", "Portfel o takiej nazwie już istnieje. Wypróbuj inną nazwę.")
+                else:
+                    messagebox.showwarning("Za dużo portfeli", "Można dodać maksymalnie 12 portfeli")
+                    createWin.destroy()
             else:
                 messagebox.showwarning("NIE", "Nazwa nie może mieć więcej niz 21 znakow!")
 

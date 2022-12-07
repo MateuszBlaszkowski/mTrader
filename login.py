@@ -109,6 +109,7 @@ passLabel = Label(root, text="Hasło:")
 passBox = Entry(root, show="*", width=25)
 restigerLbl = Label(root, text="Zarejestruj się!", cursor="hand2", foreground="blue")
 submitBtn = Button(root, text="OK", command=login)
+root.bind("<Return>", lambda e: login())
 
 loginLabel.grid(column=0, row=0, sticky=tk.W, padx=10, pady=5)
 loginBox.grid(column=1, row=0, sticky=tk.E,  pady=5, padx=5)

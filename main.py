@@ -1,7 +1,8 @@
 import tkinter as tk
-from tkinter.ttk import Label, Frame, Style
-from tkinter import messagebox, LabelFrame
+from tkinter.ttk import Label
+from tkinter import messagebox
 import db
+from PIL import Image, ImageTk
 def f1(login):
 
     def createWalletF():
@@ -10,27 +11,35 @@ def f1(login):
         global id
         id = db.cursor.fetchone()
         createWallet.mainFunction(id[0])
-
+    
+    def changeWalletF():
+        mainLf.destroy()
+        showWallets()
+        changeWallet.grid_remove()
+        settingsWallet.grid_remove()
     db.cursor.execute(f"SELECT name FROM users WHERE login = '{login}'")
     imie = db.cursor.fetchone()
     mainWin = tk.Tk()
     mainWin.configure(background="white")
     mainWin.title("Panel mTrader")
     mainWin.geometry("900x500")
+    mainWin.iconbitmap("icon.ico")
     mainWin.resizable(800, 500)
     mainWin.columnconfigure(0,weight=1)
-    mainWin.columnconfigure(1,weight=5)
+    mainWin.columnconfigure(1,weight=11)
     mainWin.columnconfigure(2,weight=1)
+    mainWin.columnconfigure(3,weight=1)
     headerText = "Witaj, "+imie[0]
     header = Label(mainWin, text=headerText, font=("Century Gothic", 22), background='white')
-    addWallet = tk.Button(mainWin, text="Dodaj portfel", width=20, height=2, border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=createWalletF)
-    changeWallet = tk.Button(mainWin, text="Zmień portfel", width=15, height=2, border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=createWalletF)
-    
+    addWallet = tk.Button(mainWin, text="Dodaj portfel", width=15, height=2, border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=createWalletF)
+    changeWallet = tk.Button(mainWin, text="Zmień portfel", width=15, height=2, border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=changeWalletF)
+    settingsWallet = tk.Button(mainWin,text="U", width=5, height=2, border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=changeWalletF)
+
 
 
     
     header.grid(column=0, row=0, sticky=tk.W, padx=15, pady=15)
-    addWallet.grid(column=2, row=0, sticky=tk.N, pady=15)
+    addWallet.grid(column=3, row=0, sticky=tk.W, pady=15)
 
     def closing():
         if messagebox.askokcancel("Wyjście", "Zamknąć program?"):
@@ -38,10 +47,10 @@ def f1(login):
     mainWin.protocol('WM_DELETE_WINDOW', closing)
     
     #wallet()         
-    def wallet():
+    def wallet(walletName):
         global mainLf
-        mainLf = tk.LabelFrame(mainWin, text="Portfel 1", width=850, height=400, background='white', font=("Century Gothic", 12))
-        mainLf.grid(columnspan=3, row=1)
+        mainLf = tk.LabelFrame(mainWin, text=walletName, width=850, height=400, background='white', font=("Century Gothic", 12))
+        mainLf.grid(columnspan=4, row=1)
         mainLf.columnconfigure(0, weight=1)
         mainLf.columnconfigure(1, weight=2)
         mainLf.columnconfigure(2, weight=3)
@@ -69,6 +78,7 @@ def f1(login):
         label3.place(x=70, y=80)
         label4.place(x=70, y=30)
         changeWallet.grid(column=1, row=0, sticky=tk.E, pady=15)
+        settingsWallet.grid(column=2, row=0, sticky=tk.N, pady=15)
 
         
         
@@ -83,32 +93,27 @@ def f1(login):
             walletsLf.columnconfigure(0, weight=1)
             walletsLf.columnconfigure(1, weight=1)
             walletsLf.columnconfigure(2, weight=1)
-            walletsLf.grid(columnspan=3, row=1, sticky=tk.N)
+            walletsLf.grid(columnspan=4, row=1, sticky=tk.N)
             buttons = []
             a=0
             db.cursor.execute(f"SELECT wallet_name FROM `wallets` INNER Join users ON users.user_id = wallets.user_id WHERE login = '{login}';")
             walletsNames = db.cursor.fetchall()
-            for i in range(len(result)):    
-                buttons.append(tk.Button(walletsLf, width=11, height=5,  wraplength=100,text=walletsNames[i],border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=ok))
+            
+            for i in range(len(result)):
+                buttons.append(tk.Button(walletsLf, width=11, height=5,  wraplength=100,text=walletsNames[i],border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=lambda m=walletsNames[i]:walletBtnClick(m)))
+                
                 if i<6:
                     buttons[i].grid(column=0+i, row=0, sticky=tk.W, padx=15, pady=15)
                 elif i<12:
                     buttons[i].grid(column=0+a, row=1, sticky=tk.W, padx=15, pady=15)
                     a+=1
         else:
-           if messagebox.askyesno("brak portfela", "Nie masz jeszcze żadnego portfela.\n\n Chcesz utworzyć nowy portfel?", parent=mainWin):
+         if messagebox.askyesno("brak portfela", "Nie masz jeszcze żadnego portfela.\n\n Chcesz utworzyć nowy portfel?", parent=mainWin):
             createWalletF()
-    def ok():
+    def walletBtnClick(walletName):
         walletsLf.destroy()
-        wallet()
-
+        wallet(walletName)
     
-
-
-
-       
-       
-
     showWallets()
     mainWin.mainloop()
 
