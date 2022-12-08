@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter.ttk import Label
 from tkinter import messagebox
 import db
-from PIL import Image, ImageTk
+import os
 def f1(login):
 
     def createWalletF():
@@ -16,7 +16,9 @@ def f1(login):
         mainLf.destroy()
         showWallets()
         changeWallet.grid_remove()
-        settingsWallet.grid_remove()
+    def logOff():
+        mainWin.destroy()
+        os.system('python login.py')
     db.cursor.execute(f"SELECT name FROM users WHERE login = '{login}'")
     imie = db.cursor.fetchone()
     mainWin = tk.Tk()
@@ -29,17 +31,23 @@ def f1(login):
     mainWin.columnconfigure(1,weight=11)
     mainWin.columnconfigure(2,weight=1)
     mainWin.columnconfigure(3,weight=1)
+    """ menuBar = tk.Menu(mainWin, background="#000000", borderwidth=0)
+        mainWin.config(menu=menuBar)
+        walletMenu = tk.Menu(menuBar, tearoff=False, background='#000000')
+        walletMenu.add_command(label="WXIT")
+        menuBar.add_cascade(label="ok", menu=walletMenu, background="#000000")"""
     headerText = "Witaj, "+imie[0]
     header = Label(mainWin, text=headerText, font=("Century Gothic", 22), background='white')
-    addWallet = tk.Button(mainWin, text="Dodaj portfel", width=15, height=2, border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=createWalletF)
+    addWallet = tk.Button(mainWin, text="Wyloguj się", width=15, height=2, border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=logOff, foreground="red")
     changeWallet = tk.Button(mainWin, text="Zmień portfel", width=15, height=2, border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=changeWalletF)
-    settingsWallet = tk.Button(mainWin,text="U", width=5, height=2, border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=changeWalletF)
+    settingsWallet = tk.Button(mainWin,text="+", width=5, height=2, border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=createWalletF)
 
 
 
     
     header.grid(column=0, row=0, sticky=tk.W, padx=15, pady=15)
     addWallet.grid(column=3, row=0, sticky=tk.W, pady=15)
+    settingsWallet.grid(column=2, row=0, sticky=tk.N, pady=15)
 
     def closing():
         if messagebox.askokcancel("Wyjście", "Zamknąć program?"):
@@ -58,27 +66,89 @@ def f1(login):
         lf = tk.LabelFrame(mainLf, text="Dane o portfelu", width=300, height=300, background='white', font=("Century Gothic", 12))
         
         canvas = tk.Canvas(mainLf, width=40, height=300, bg='white', highlightbackground='white')
-        
+        """
         
         label1 = Label(mainLf, text="Alior", font=("Century Gothic", 16), background="white")
-    
         label2 = Label(mainLf, text="Kruk", font=("Century Gothic", 16), background="white")
         label3 = Label(mainLf, text="Orlen", font=("Century Gothic", 16), background="white")
-        label4 = Label(mainLf, text="Inne", font=("Century Gothic", 16), background="white")
-        
-        canvas.create_rectangle((0,300),(40,150), fill='#9edc13', outline='#9edc13')# 150 + (300-150)/2 + 5 = 150 + 75 + 5 = 230
+        label4 = Label(mainLf, text="Inne", font=("Century Gothic", 16), background="white")"""
+        def makeColumn(prc):
+            tab = []
+            tab2 = []
+            for i in range(3):
+                dict1 = {"a" : int((prc[i]/100)*300)}
+                if i > 0:
+                    dict1["a"] += tab[i-1]["a"]
+                tab.append(dict1)
+            for i in range(len(tab)): 
+                if i > 0:
+                    x1 = tab[i-1]["a"]
+                elif i == 0:
+                    x1 = 0 
+                x2 = tab[i]["a"]
+                dict2 = {
+                    0 : x1,
+                    1 : x2
+                }
+                tab2.append(dict2)
+            return tab2
+        colors = ['#9edc13', '#2ab7ed', '#ed8f2a', '#fff035']
+        componets = ['1', '2', '3']
+        a = 32
+        b = 32
+        c = 33
+        labels = []
+        for i in range(3):
+            #print(makeColumn([a,b,c])[i][1], makeColumn([a,b,c])[i][0])
+            canvas.create_rectangle((0,makeColumn([a,b,c])[i][1]),(40,makeColumn([a,b,c])[i][0]), fill=colors[i], outline=colors[i])
+            labels.append(Label(mainLf, text=componets[i], font=("Century Gothic", 16), background="white"))
+            labels[i].place(x=70, y=makeColumn([a,b,c])[i][0] + (makeColumn([a,b,c])[i][1] - makeColumn([a,b,c])[i][0])/2+5)
+        if 300 - makeColumn([a,b,c])[2][1] > 5:
+            canvas.create_rectangle((0,300),(40,makeColumn([a,b,c])[2][1]), fill=colors[3], outline=colors[3])
+            labels.append(Label(mainLf, text="Inne", font=("Century Gothic", 16), background="white"))
+            labels[3].place(x=70, y=makeColumn([a,b,c])[2][1] + (300-makeColumn([a,b,c])[2][1])/2 + 5)
+        """canvas.create_rectangle((0,300),(40,150), fill='#9edc13', outline='#9edc13')# 150 + (300-150)/2 + 5 = 150 + 75 + 5 = 230
         canvas.create_rectangle((0,150),(40,100), fill='#2ab7ed', outline='#2ab7ed')
         canvas.create_rectangle((0,100),(40,50), fill='#ed8f2a', outline='#ed8f2a')
-        canvas.create_rectangle((0,50),(40,0), fill='#fff035', outline='#fff035')
+        canvas.create_rectangle((0,50),(40,0), fill='#fff035', outline='#fff035')"""
         
         lf.place(x=200, y=50)
+        lf.columnconfigure(0, weight=1)
+        lf.columnconfigure(1, weight=1)
+        fr = []
+        frLabels = []
+        frLabelsT = [20500, 20000, '5,00%', '500 zł']
+        walletDataLabels = []
+        walletDataLabelsT = ['Wartość\nobecna', 'Wartość\npoczątkowa', 'Stopa zwrotu', 'Zysk/strata']
+        for i in range(4):
+            fr.append(tk.Frame(lf, width=80, height=80))
+            frLabels.append(Label(fr[i], text=frLabelsT[i], anchor="center", font=("Century Gothic", 12)))
+            frLabels[i].place(relx=0.5, rely=0.5, anchor=tk.CENTER)
+            walletDataLabels.append(Label(lf, text=walletDataLabelsT[i], font=("Century Gothic", 10), background="white"))
+
+        if frLabelsT[0]>frLabelsT[1]:
+            frLabels[0].config(foreground="#45e43a")
+            frLabels[2].config(foreground="#45e43a")
+            frLabels[3].config(foreground="#45e43a")
+        elif frLabelsT[0]<frLabelsT[1]:
+            frLabels[0].config(foreground="red")
+            frLabels[2].config(foreground="red")
+            frLabels[3].config(foreground="red")
+        walletDataLabels[0].grid(column=0, row=0, sticky=tk.N, pady=15)
+        fr[0].grid(column=0, row=1, sticky=tk.N, padx=20)
+        walletDataLabels[1].grid(column=1, row=0, sticky=tk.N, pady=15)
+        fr[1].grid(column=1, row=1, sticky=tk.N, padx=20)
+        walletDataLabels[2].grid(column=0, row=2, sticky=tk.N, pady=15)
+        fr[2].grid(column=0, row=3, sticky=tk.N, padx=20, pady=(0, 15))
+        walletDataLabels[3].grid(column=1, row=2, sticky=tk.N, pady=15)
+        fr[3].grid(column=1, row=3, sticky=tk.N, padx=20, pady=(0, 15))
+
         
-        label1.place(x=70, y=230)
-        label2.place(x=70, y=130)
-        label3.place(x=70, y=80)
-        label4.place(x=70, y=30)
+        """ label1.place(x=70, y=230)
+            label2.place(x=70, y=130)
+            label3.place(x=70, y=80)
+            label4.place(x=70, y=30)"""
         changeWallet.grid(column=1, row=0, sticky=tk.E, pady=15)
-        settingsWallet.grid(column=2, row=0, sticky=tk.N, pady=15)
 
         
         
@@ -113,7 +183,8 @@ def f1(login):
     def walletBtnClick(walletName):
         walletsLf.destroy()
         wallet(walletName)
-    
+        
+
     showWallets()
     mainWin.mainloop()
 
