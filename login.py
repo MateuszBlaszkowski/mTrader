@@ -13,7 +13,7 @@ def restiger():
     restigerWindow.resizable(0,0)
     restigerWindow.columnconfigure(0,weight=1)
     restigerWindow.columnconfigure(1,weight=3)
-    restigerWindow.geometry('300x350')
+    restigerWindow.geometry('300x315')
    
     global entryName
     global entryLogin
@@ -34,7 +34,7 @@ def restiger():
     entryPass = Entry(restigerWindow, width=25, show="*")
     labelRptPass = Label(restigerWindow, text="Powtórz Hasło:")
     entryRptPass = Entry(restigerWindow, width=25, show="*")
-    chk = Checkbutton(restigerWindow, text="Akceptuje regulamin")
+
     submitR = Button(restigerWindow, text="Rejestracja", width=45, command=restigerFun)
     
     header.grid(columnspan=2, row=0, pady=10, sticky=tk.N)
@@ -48,8 +48,7 @@ def restiger():
     entryPass.grid(column=1, row=4, pady=10, sticky=tk.N)
     labelRptPass.grid(column=0, row=5, pady=10, padx=10, sticky=tk.W)
     entryRptPass.grid(column=1, row=5, pady=10, sticky=tk.N)
-    chk.grid(column=1, row=6, pady=10, sticky=tk.N)
-    submitR.grid(columnspan=2, row=7)
+    submitR.grid(columnspan=2, row=6, pady=10)
     
     restigerWindow.mainloop()
 
@@ -80,6 +79,14 @@ def restigerFun():
     else:
         messagebox.showwarning("Błąd", "wpisz wszystkie informacje", parent=restigerWindow)
 
+def remember(login):
+    db.cursor.execute(f"INSERT INTO `remembered_users`(`computer_id`, `user_login`) VALUES (NULL,'{login}')")
+    db.mTrader_db.commit()
+    db.cursor.execute(f"SELECT `computer_id` FROM `remembered_users` WHERE `user_login` = '{login}'")
+    result = db.cursor.fetchone()
+    file = open("login_temp.txt", "w")
+    file.write(str(result[0])+"\n"+login) 
+    file.close()
 def login():
     if loginBox.get() == '' or passBox.get() == '':
         messagebox.showinfo("Błąd", "Wprowadź login i hasło!")
@@ -91,6 +98,8 @@ def login():
         db.cursor.execute(f"SELECT * FROM users WHERE login='{login}' AND password='{password}'")
         result = db.cursor.fetchall()
         if len(result)>0:
+            if chkVar.get() == 1:
+                remember(login)
             root.destroy()
             main.f1(login)
         else:
@@ -98,15 +107,18 @@ def login():
 print(db.mTrader_db)
 root = tk.Tk()
 root.title("Zaloguj się")
-root.geometry('250x100')
+root.geometry('250x130')
 root.columnconfigure(0, weight=1)
 root.columnconfigure(1, weight=1)
 root.resizable(0,0)
+
+chkVar = tk.IntVar()
 
 loginLabel = Label(root, text="Login:")
 loginBox = Entry(root, width=25)
 passLabel = Label(root, text="Hasło:")
 passBox = Entry(root, show="*", width=25)
+rememberChk = Checkbutton(root, text="Zapamiętaj mnie", variable=chkVar, onvalue=1, offvalue=0)
 restigerLbl = Label(root, text="Zarejestruj się!", cursor="hand2", foreground="blue")
 submitBtn = Button(root, text="OK", command=login)
 root.bind("<Return>", lambda e: login())
@@ -115,9 +127,10 @@ loginLabel.grid(column=0, row=0, sticky=tk.W, padx=10, pady=5)
 loginBox.grid(column=1, row=0, sticky=tk.E,  pady=5, padx=5)
 passLabel.grid(column=0, row=1, sticky=tk.W, padx=10, pady=5)
 passBox.grid(column=1, row=1, sticky=tk.E,  pady=5, padx=5)
-restigerLbl.grid(column= 0, row=2,sticky=tk.W, padx=10, pady=5, columnspan=2)
+rememberChk.grid(column=1, row=2, sticky=tk.E,  pady=5, padx=5)
+restigerLbl.grid(column= 0, row=3,sticky=tk.W, padx=10, pady=5, columnspan=2)
 restigerLbl.bind("<Button-1>", lambda e: restiger())
-submitBtn.grid(column=1, row=2, sticky=tk.E, pady=5, padx=5)
+submitBtn.grid(column=1, row=3, sticky=tk.E, pady=5, padx=5)
 root.mainloop()
 
 """

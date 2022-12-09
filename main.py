@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter.ttk import Label
+from tkinter.ttk import Label, Treeview, Scrollbar
 from tkinter import messagebox
 import db
 import os
@@ -18,6 +18,10 @@ def f1(login):
         changeWallet.grid_remove()
     def logOff():
         mainWin.destroy()
+        if os.path.exists("login_temp.txt"):
+            os.remove("login_temp.txt")
+            db.cursor.execute(f"DELETE FROM remembered_users WHERE user_login='{login}'")
+            db.mTrader_db.commit()
         os.system('python login.py')
     db.cursor.execute(f"SELECT name FROM users WHERE login = '{login}'")
     imie = db.cursor.fetchone()
@@ -26,7 +30,7 @@ def f1(login):
     mainWin.title("Panel mTrader")
     mainWin.geometry("900x500")
     mainWin.iconbitmap("icon.ico")
-    mainWin.resizable(800, 500)
+    mainWin.resizable(0,0)
     mainWin.columnconfigure(0,weight=1)
     mainWin.columnconfigure(1,weight=11)
     mainWin.columnconfigure(2,weight=1)
@@ -49,15 +53,15 @@ def f1(login):
     addWallet.grid(column=3, row=0, sticky=tk.W, pady=15)
     settingsWallet.grid(column=2, row=0, sticky=tk.N, pady=15)
 
-    def closing():
+    """def closing():
         if messagebox.askokcancel("Wyjście", "Zamknąć program?"):
             mainWin.destroy()
-    mainWin.protocol('WM_DELETE_WINDOW', closing)
+    mainWin.protocol('WM_DELETE_WINDOW', closing)"""
     
     #wallet()         
     def wallet(walletName):
         global mainLf
-        mainLf = tk.LabelFrame(mainWin, text=walletName, width=850, height=400, background='white', font=("Century Gothic", 12))
+        mainLf = tk.LabelFrame(mainWin, text=walletName, width=mainWin.winfo_width()-50, height=400, background='white', font=("Century Gothic", 12))
         mainLf.grid(columnspan=4, row=1)
         mainLf.columnconfigure(0, weight=1)
         mainLf.columnconfigure(1, weight=2)
@@ -112,7 +116,7 @@ def f1(login):
         canvas.create_rectangle((0,100),(40,50), fill='#ed8f2a', outline='#ed8f2a')
         canvas.create_rectangle((0,50),(40,0), fill='#fff035', outline='#fff035')"""
         
-        lf.place(x=200, y=50)
+        lf.place(relx=0.2, y=25)
         lf.columnconfigure(0, weight=1)
         lf.columnconfigure(1, weight=1)
         fr = []
@@ -143,6 +147,26 @@ def f1(login):
         walletDataLabels[3].grid(column=1, row=2, sticky=tk.N, pady=15)
         fr[3].grid(column=1, row=3, sticky=tk.N, padx=20, pady=(0, 15))
 
+        newOperation = tk.Button(mainLf, text="Nowa operacja", border=0, font=("Century Gothic", 12), activebackground="#e0e0e0").place(relx=0.82, rely=0.02, relwidth=0.16, relheight=0.10)
+        walletSettings = tk.Button(mainLf, text="Ustawienia", border=0, font=("Century Gothic", 12), activebackground="#e0e0e0").place(relx=0.64, rely=0.02, relwidth=0.16, relheight=0.10)
+        Label(mainLf, text="Historia operacji", background="white", font=("Century Gothic", 12)).place(relx=0.51, rely=0.215)
+        treeview = Treeview(mainLf, columns=('column1', 'column2','column3', 'column4', 'column5'), show='headings')
+        treeview.column('column1', width=60, stretch=tk.NO)
+        treeview.column('column2', width=96, stretch=tk.NO)
+        treeview.column('column3', width=75, stretch=tk.NO)
+        treeview.column('column4', width=90, stretch=tk.NO)
+        treeview.column('column5', width=63, stretch=tk.NO)
+        treeview.heading('column1', text='Symbol')
+        treeview.heading('column2', text='Kupno/sprzedaż')
+        treeview.heading('column3', text='Cena')
+        treeview.heading('column4', text='Cena Aktualna')
+        treeview.heading('column5', text='Data')
+        for i in range(2):
+            treeview.insert('', tk.END,values=(i, i, i, i, i))
+        scrollbar = Scrollbar(mainLf, orient=tk.VERTICAL, command=treeview.yview)
+        scrollbar.place(relx=0.961, rely=0.320, relheight=0.59)
+        treeview.configure(yscroll=scrollbar.set)
+        treeview.place(relx=0.51, rely=0.315, width=400, relheight=0.6)
         
         """ label1.place(x=70, y=230)
             label2.place(x=70, y=130)
