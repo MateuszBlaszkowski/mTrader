@@ -1,1 +1,2 @@
 v0.1 - Dane o portfelu, przycisk "wyloguj się", słupek dynamiczny, Porprawki działania
+v0.2 - "Zapamiętaj mnie", Rozwój interfejsu panelu głównego
