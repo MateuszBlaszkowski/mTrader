@@ -146,8 +146,8 @@ def f1(login):
         fr[2].grid(column=0, row=3, sticky=tk.N, padx=20, pady=(0, 15))
         walletDataLabels[3].grid(column=1, row=2, sticky=tk.N, pady=15)
         fr[3].grid(column=1, row=3, sticky=tk.N, padx=20, pady=(0, 15))
-
-        newOperation = tk.Button(mainLf, text="Nowa operacja", border=0, font=("Century Gothic", 12), activebackground="#e0e0e0").place(relx=0.82, rely=0.02, relwidth=0.16, relheight=0.10)
+        import operationWin
+        newOperation = tk.Button(mainLf, text="Nowa operacja", border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=operationWin.mainF).place(relx=0.82, rely=0.02, relwidth=0.16, relheight=0.10)
         walletSettings = tk.Button(mainLf, text="Ustawienia", border=0, font=("Century Gothic", 12), activebackground="#e0e0e0").place(relx=0.64, rely=0.02, relwidth=0.16, relheight=0.10)
         Label(mainLf, text="Historia operacji", background="white", font=("Century Gothic", 12)).place(relx=0.51, rely=0.215)
         treeview = Treeview(mainLf, columns=('column1', 'column2','column3', 'column4', 'column5'), show='headings')
