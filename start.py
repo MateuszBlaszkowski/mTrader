@@ -1,7 +1,7 @@
 import os
 import db
 try:
-    file = open("login_temp.txt", "r")
+    file = open("cache/login_temp.txt", "r")
 
     computer_id = file.readline()
     login = file.readline()

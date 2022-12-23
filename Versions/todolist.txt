@@ -1,0 +1,7 @@
+1. Historia Operacji
+
+1. Pobranie ISINÓW Z BAZY
+
+2. Sprawdzenie ile Jest akcji danego isinu w danym portfelu
+
+3. Pobranie aktualnej ceny isinu przemnożenie przez ilość i wrzucenie do tablicy

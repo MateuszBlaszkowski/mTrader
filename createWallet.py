@@ -21,18 +21,21 @@ def mainFunction(id):
                     result = db.cursor.fetchall()
 
                     if(len(result)==0):
-                        db.cursor.execute(f"INSERT INTO `wallets`(`wallet_id`, `user_id`, `wallet_name`, `wallet_size`) VALUES (NULL,'{id}','{name}','{size}')")
-                        db.mTrader_db.commit()
-                        try:
-                            main.walletsLf.destroy()
-                        except:
-                            pass
-                        try:
-                            main.mainLf.destroy() 
-                        except:
-                            pass
-                        main.showWallets()
-                        createWin.destroy()
+                        if int(size)>0:
+                            db.cursor.execute(f"INSERT INTO `wallets`(`wallet_id`, `user_id`, `wallet_name`, `wallet_size`, `free_funds`) VALUES (NULL,'{id}','{name}','{size}', '{size}')")
+                            db.mTrader_db.commit()
+                            try:
+                                main.walletsLf.destroy()
+                            except:
+                                pass
+                            try:
+                                main.mainLf.destroy() 
+                            except:
+                                pass
+                            main.showWallets()
+                            createWin.destroy()
+                        else:
+                            messagebox.showwarning("Wielkość portfela", "Wielkośc portfela musi być większa od 0!")
                     else:
                         messagebox.showwarning("Portfel o takiej nazwie już istnieje", "Portfel o takiej nazwie już istnieje. Wypróbuj inną nazwę.")
                 else:

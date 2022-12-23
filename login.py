@@ -84,7 +84,7 @@ def remember(login):
     db.mTrader_db.commit()
     db.cursor.execute(f"SELECT `computer_id` FROM `remembered_users` WHERE `user_login` = '{login}'")
     result = db.cursor.fetchone()
-    file = open("login_temp.txt", "w")
+    file = open("cache//login_temp.txt", "w")
     file.write(str(result[0])+"\n"+login) 
     file.close()
 def login():
