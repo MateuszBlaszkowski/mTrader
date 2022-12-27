@@ -101,10 +101,10 @@ def createOperation():
             if price*count<=walletsize:
                 db.cursor.execute(f"INSERT INTO `shares`(`WALLET_ID`, `PRICE`, `DATE`, `SYMBOL`, `ISIN`, `COUNT`) VALUES ({walletId},'{price}',CURRENT_TIMESTAMP(),'{symbol}','{isin}', {count})")
                 db.mTrader_db.commit()
-                db.cursor.execute(f"UPDATE `wallets` SET `free_funds`=`free_funds`-{price*count} WHERE wallet_id = {walletId};")
+                db.cursor.execute(f"UPDATE `wallets` SET `free_funds`=`free_funds`-{float(price*count)} WHERE wallet_id = {walletId};")
                 db.mTrader_db.commit()
-                messagebox.showinfo("OK", "Akcje zostały kupione")
                 oWindow.destroy()
+                messagebox.showinfo("OK", "Akcje zostały kupione")
             else:
                 messagebox.showwarning("Za mało pienędzy", "Masz za mało pieniędzy w portfelu aby kupić określoną ilość akcji!")
                 pb.grid_forget()
@@ -141,6 +141,9 @@ def calculatePrice():
             f1.grid(column=0, row=1)
     except:
         messagebox.showwarning("Błąd", "Ilość akcji nie może być pusta i musi składać się wylącznie z cyfr")
+        pb.grid_forget()
+        lf.grid(column=0, row=0, sticky=tk.N, padx=10, pady=10)
+        f1.grid(column=0, row=1)
 def sell():
     db.cursor.execute(f"SELECT SUM(`COUNT`) FROM `shares` WHERE WALLET_ID = {walletId} AND SYMBOL = '{symbol.get()}';")
     result = db.cursor.fetchone()

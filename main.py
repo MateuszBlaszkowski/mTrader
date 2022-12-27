@@ -120,10 +120,33 @@ def f1(login):
             count[i[0]] = sumCount[0]
             price = gpw.main(i[0])["price"].replace(",",".")
             price = float(price)
-            shares.append(int(count[i[0]]) * price)
+            shares.append(float(count[i[0]]) * price)
         db.cursor.execute(f"SELECT free_funds FROM wallets WHERE wallet_id = {walletId}")
         freeFunds = db.cursor.fetchone()
-        walletFunds = round(sum(shares) + int(freeFunds[0]),2)
+        walletFunds = round(sum(shares) + float(freeFunds[0]),2)
+        
+        treeview = Treeview(mainLf, columns=('column1', 'column3', 'column4', 'column5', 'column6'), show='headings')
+        treeview.column('column1', width=50, stretch=tk.NO)
+        #treeview.column('column2', width=36, stretch=tk.NO)
+        treeview.column('column3', width=55, stretch=tk.NO)
+        treeview.column('column4', width=90, stretch=tk.NO)
+        treeview.column('column5', width=70, stretch=tk.NO)
+        treeview.column('column6', width=117, stretch=tk.NO)
+        treeview.heading('column1', text='Symbol')
+        #treeview.heading('column2', text='K/S')
+        treeview.heading('column3', text='Cena')
+        treeview.heading('column4', text='Cena Aktualna')
+        treeview.heading('column5', text='Ilośc akcji')
+        treeview.heading('column6', text='Data Zakupu')
+        db.cursor.execute(f"SELECT * FROM shares WHERE WALLET_ID ={walletId}")
+        result = db.cursor.fetchall()
+        for i in result:
+            #print(i[2])
+            isin = str(i[5])
+            import GPW_Scrapper_ISIN as gpw
+            gpwDict = gpw.main(isin)
+            treeview.insert('', tk.END,values=(i[4],i[2],gpwDict["price"],i[6],i[3]))
+       
         pb.destroy()
         mainLf.grid(columnspan=4, row=1)
         percent = [0,0]
@@ -144,7 +167,7 @@ def f1(login):
             labels[i].place(x=70, y=makeColumn([a,b,c])[i][0] + (makeColumn([a,b,c])[i][1] - makeColumn([a,b,c])[i][0])/2+5)
         if 300 - makeColumn([a,b,c])[2][1] > 5:
             canvas.create_rectangle((0,300),(40,makeColumn([a,b,c])[2][1]), fill=colors[3], outline=colors[3])
-            labels.append(Label(mainLf, text="Inne", font=("Century Gothic", 16), background="white"))
+            labels.append(Label(mainLf, text="Akcje", font=("Century Gothic", 16), background="white"))
             labels[3].place(x=70, y=makeColumn([a,b,c])[2][1] + (300-makeColumn([a,b,c])[2][1])/2 + 5)
         
         lf.place(relx=0.2, y=25)
@@ -163,15 +186,18 @@ def f1(login):
             frLabels.append(Label(fr[i], text=frLabelsT[i], anchor="center", font=("Century Gothic", 12)))
             frLabels[i].place(relx=0.5, rely=0.5, anchor=tk.CENTER)
             walletDataLabels.append(Label(lf, text=walletDataLabelsT[i], font=("Century Gothic", 10), background="white"))
-
-        if frLabelsT[0]>frLabelsT[1]:
+        frLabelsT[0] = frLabelsT[0].replace("zł", "")
+        frLabelsT[1] = frLabelsT[1].replace("zł", "")
+       
+        if float(frLabelsT[0])>float(frLabelsT[1]):
             frLabels[0].config(foreground="#45e43a")
             frLabels[2].config(foreground="#45e43a")
             frLabels[3].config(foreground="#45e43a")
-        elif frLabelsT[0]<frLabelsT[1]:
+        elif float(frLabelsT[0])<float(frLabelsT[1]):
             frLabels[0].config(foreground="red")
             frLabels[2].config(foreground="red")
             frLabels[3].config(foreground="red")
+        
         walletDataLabels[0].grid(column=0, row=0, sticky=tk.N, pady=15)
         fr[0].grid(column=0, row=1, sticky=tk.N, padx=20)
         walletDataLabels[1].grid(column=1, row=0, sticky=tk.N, pady=15)
@@ -182,23 +208,9 @@ def f1(login):
         fr[3].grid(column=1, row=3, sticky=tk.N, padx=20, pady=(0, 15))
         import operationWin
         newOperation = tk.Button(mainLf, text="Nowa operacja", border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=newOperationBtn).place(relx=0.82, rely=0.02, relwidth=0.16, relheight=0.10)
-        walletSettings = tk.Button(mainLf, text="Ustawienia", border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=refresh).place(relx=0.64, rely=0.02, relwidth=0.16, relheight=0.10)
-        Label(mainLf, text="Historia operacji", background="white", font=("Century Gothic", 12)).place(relx=0.51, rely=0.215)
-        treeview = Treeview(mainLf, columns=('column1', 'column2','column3', 'column4', 'column5', 'column6'), show='headings')
-        treeview.column('column1', width=60, stretch=tk.NO)
-        treeview.column('column2', width=36, stretch=tk.NO)
-        treeview.column('column3', width=65, stretch=tk.NO)
-        treeview.column('column4', width=90, stretch=tk.NO)
-        treeview.column('column5', width=63, stretch=tk.NO)
-        treeview.column('column6', width=68, stretch=tk.NO)
-        treeview.heading('column1', text='Symbol')
-        treeview.heading('column2', text='K/S')
-        treeview.heading('column3', text='Cena')
-        treeview.heading('column4', text='Cena Aktualna')
-        treeview.heading('column5', text='Ilośc akcji')
-        treeview.heading('column6', text='Data')
-        for i in range(2):
-            treeview.insert('', tk.END,values=(i, i, i, i, i))
+        walletSettings = tk.Button(mainLf, text="Odśwież", border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=refresh).place(relx=0.64, rely=0.02, relwidth=0.16, relheight=0.10)
+        Label(mainLf, text="Lista akcji", background="white", font=("Century Gothic", 12)).place(relx=0.51, rely=0.215)
+
         scrollbar = Scrollbar(mainLf, orient=tk.VERTICAL, command=treeview.yview)
         scrollbar.place(relx=0.961, rely=0.320, relheight=0.59)
         treeview.configure(yscroll=scrollbar.set)
@@ -252,6 +264,7 @@ def f1(login):
         # starting thread 1
         t1.start()
         # starting thread 2
+        t2.setDaemon(True)
         t2.start()
 
     showWallets()
