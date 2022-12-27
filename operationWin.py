@@ -141,6 +141,9 @@ def calculatePrice():
             f1.grid(column=0, row=1)
     except:
         messagebox.showwarning("Błąd", "Ilość akcji nie może być pusta i musi składać się wylącznie z cyfr")
+        pb.grid_forget()
+        lf.grid(column=0, row=0, sticky=tk.N, padx=10, pady=10)
+        f1.grid(column=0, row=1)
 def sell():
     db.cursor.execute(f"SELECT SUM(`COUNT`) FROM `shares` WHERE WALLET_ID = {walletId} AND SYMBOL = '{symbol.get()}';")
     result = db.cursor.fetchone()

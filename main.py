@@ -144,7 +144,7 @@ def f1(login):
             labels[i].place(x=70, y=makeColumn([a,b,c])[i][0] + (makeColumn([a,b,c])[i][1] - makeColumn([a,b,c])[i][0])/2+5)
         if 300 - makeColumn([a,b,c])[2][1] > 5:
             canvas.create_rectangle((0,300),(40,makeColumn([a,b,c])[2][1]), fill=colors[3], outline=colors[3])
-            labels.append(Label(mainLf, text="Inne", font=("Century Gothic", 16), background="white"))
+            labels.append(Label(mainLf, text="Akcje", font=("Century Gothic", 16), background="white"))
             labels[3].place(x=70, y=makeColumn([a,b,c])[2][1] + (300-makeColumn([a,b,c])[2][1])/2 + 5)
         
         lf.place(relx=0.2, y=25)
@@ -182,7 +182,7 @@ def f1(login):
         fr[3].grid(column=1, row=3, sticky=tk.N, padx=20, pady=(0, 15))
         import operationWin
         newOperation = tk.Button(mainLf, text="Nowa operacja", border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=newOperationBtn).place(relx=0.82, rely=0.02, relwidth=0.16, relheight=0.10)
-        walletSettings = tk.Button(mainLf, text="Ustawienia", border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=refresh).place(relx=0.64, rely=0.02, relwidth=0.16, relheight=0.10)
+        walletSettings = tk.Button(mainLf, text="Odśwież", border=0, font=("Century Gothic", 12), activebackground="#e0e0e0", command=refresh).place(relx=0.64, rely=0.02, relwidth=0.16, relheight=0.10)
         Label(mainLf, text="Historia operacji", background="white", font=("Century Gothic", 12)).place(relx=0.51, rely=0.215)
         treeview = Treeview(mainLf, columns=('column1', 'column2','column3', 'column4', 'column5', 'column6'), show='headings')
         treeview.column('column1', width=60, stretch=tk.NO)

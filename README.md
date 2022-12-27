@@ -27,4 +27,6 @@ Then you can run mTrader by executing "run.py" file
 
 ## Technologies
 
-Python | Tkinter | MariaDB | BS4
+
+
+ ![image](https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=python&logoColor=blue)| Tkinter | MariaDB | BS4
