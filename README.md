@@ -1,4 +1,4 @@
-# mTrader - Invest APP
+# mTrader - Investing APP
 ## Table of contents
 
 * [Overview](#Overview)
