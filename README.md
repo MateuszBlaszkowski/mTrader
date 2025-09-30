@@ -30,3 +30,4 @@ Then you can run mTrader by executing "run.py" file
 Python | Tkinter | MariaDB | BS4
 
 ## Screenshots
+<img src="./mTrader_screen_2.png" width="800"/>
