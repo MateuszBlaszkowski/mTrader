@@ -1,4 +1,4 @@
-# mTrader - Investing APP
+# mTrader - Investing APP 💹
 ## Table of contents
 
 * [Overview](#Overview)
@@ -6,7 +6,7 @@
 * [Technologies](#Technologies)
 
 ## Overview
-mTrader is a simple app in wihich you can simulate investing on Polish stock Exchange.
+mTrader is a simple app in wihich you can simulate investing on Polish Stock Exchange.
 
 ## Setup
 You have to install a few required libraries
@@ -28,3 +28,5 @@ Then you can run mTrader by executing "run.py" file
 ## Technologies
 
 Python | Tkinter | MariaDB | BS4
+
+## Screenshots
